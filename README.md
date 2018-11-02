@@ -1,2 +1,2 @@
-# -Vue
+# Vue
 Vue笔记
