@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <!-- 一、创建一个script标签，在script标签里面写模板 -->
+
+    <div id="app">
+
+    </div>
+
+    <script src="text/template" id='tmp'>   //注意这里src的类型为src="text/template"
+        <div>我是创建的script标签里面的div</div>
+    </script>
+
+    <script>
+    
+        var vm = new Vue({
+            el:'#app',
+            template:'#tmp'
+        })
+    </script>
+</body>
+</html>

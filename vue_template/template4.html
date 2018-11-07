@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 第四种写法创建一个template标签,把模板放到里面 -->
+
+    <div id="app">
+
+    </div>
+
+    <template id="tem">
+        <div>我是创建的template标签里面的模板</div>
+    </template>
+
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            template:'#tem'
+        })
+    </script>
+</body>
+</html>

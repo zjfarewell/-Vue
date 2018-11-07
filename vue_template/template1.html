@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- template的写法 -->
+    <!-- 在vue里面有一个选项参数：tempaate, 只能有一个顶级标签 -->
+
+    <!-- 一、第一种写法 -->
+    <div id="app">
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            template:`<div>hello world</div>`
+        })
+        
+    </script>
+</body>
+</html>

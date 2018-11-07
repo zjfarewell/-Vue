@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue的过渡动效</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        #app div{
+            width: 200px;
+            height:200px;
+            background: palegreen;
+        }
+        .show-leave{
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .show-leave-to{
+            transform: translateX(300px);
+            opacity: 0.3;
+        }
+        .show-leave-active{
+            transition: 2s linear;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- vue的动画效果
+    1、v-if   2、v-show  3、组件的切换
+    vue提供一个组件：transition   transition有一个属性：name  name= "show" 相当于 class="show"
+    在css里面写样式
+    消失时的动画效果
+    .show-leave:从什么样式(位置),开始消失
+    .show-leave-to: 到什么样式(位置)，彻底消失
+    .show-leave-active:消失的过渡时间
+
+    显示时的动画效果
+    .show-enter:从什么样式(位置),开始出现
+    .show-enter-to: 出现到什么位置停止
+    .show-enter-active:出现的过渡时间 -->
+
+
+
+    <div id="app">
+        <input type="button" value="显示/隐藏" @click="btn">
+        <transition name="show">
+            <div v-show="onoff"></div>
+        </transition>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                onoff:true
+            },
+            methods:{
+                btn(){
+                    this.onoff = !this.onoff;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
