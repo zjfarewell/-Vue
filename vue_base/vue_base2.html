@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue的指令</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>v-model=""</p>
+        <p>数据双向绑定，只用于表单类元素</p>
+
+        <p>v-on:事件名="fn"  简写：@事件名="fn"</p>
+        <p>v-on:事件名="fn(obj)"  简写：@事件名="fn(obj)"</p>
+
+        <p>事件修饰符：只有v-model和v-on才有</p>
+        <p>v-model的事件修饰符</p>
+
+        <p>ASCII码</p>
+
+
+        <p>v-if="" 和 v-else</p>
+
+        <p>v-show=""</p>
+
+        <p>v-for="(item,index) in/of arr"</p>
+        <p>v-for="(value,key) in/of obj"</p>
+        <p>v-for="str/num in/of string/number"</p>
+
+        <p>v-bind:标签属性名="标签属性值"  简写  :标签属性名="标签属性值"</p>
+        <p>两个特殊标签属性class和style</p>
+    </div>
+
+    <div>
+        <p>Vue的动画</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            }
+        });
+    </script>
+</body>
+</html>

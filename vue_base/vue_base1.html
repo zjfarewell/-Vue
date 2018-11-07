@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue概述</title>
+    <script src="../js/vue.js"></script>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div id="app">
+            {{comput}}  <!-- 试用计算属性 -->
+            <br>
+            {{num}}
+            <br>
+            {{arr[0]}}
+            <br>
+        <div style="width: 100px;height: 100px; background: #f60;" v-if="onoff"></div>
+
+    </div>
+    <script>
+        //全局自定义指令
+        Vue.directive('指令名字',{
+            //指令钩子函数
+            bind(el,obj){
+
+            },
+        });
+
+        //全局过滤器   使用方法 {{data|过滤名称}}
+        Vue.filter('过滤器名称',function(value1,value2){
+            return 0;
+        });
+
+        //全局组件 
+        Vue.component('组件名',{
+            template:'<div></div>',
+            data(){
+                return{
+
+                }
+            },
+            methods:{
+
+            },
+            watch:{
+
+            },
+            filters:{
+
+            },
+            computed:{
+
+            },
+            directives:{
+                
+            }
+        });
+
+        var vm = new Vue({
+            //挂载点
+            el:'#app',
+
+            //选项参数:数据代理
+            data:{
+                msg:'',
+                num:1,
+                arr:[0],
+                onoff:true
+            },
+
+            //选项参数：方法
+            methods:{
+
+            },
+
+            //选项参数：局部自定义指令
+            directives:{
+                '指令名称':{
+                    bind(el,obj){
+
+                    },
+                }
+            },
+
+            //选项参数：局部过滤器
+            filters:{
+                '过滤器名称':function(value){
+                    return 0;
+                }
+            },
+
+            //选项参数： 计算属性
+            computed:{
+                'comput':function(){
+                    return this.msg+156;
+                },
+                '函数名':function(){
+                    return this.msg+156;
+                }
+            },
+
+            //选项参数：  数据代理检测
+            watch:{
+                num:{
+                    handler:function(newValue,oldValue){
+                        this.onoff = !this.onoff;
+                        console.log(this)
+                    }
+                },
+                arr:{
+                    handler:function(newValue,oldValue){
+
+                    },
+                    deep:true  //是否深度检测 
+                }
+            },
+            
+            //选项参数：局部组件
+            components:{
+                /*
+                */
+                '组件名':{
+                    template:'<div>我是局部组件里面的模板</div>',
+                    data(){
+                        return{
+
+                        }
+                    },
+                    methods:{  //
+
+                    },
+                    computed:{ //
+
+                    },
+                    watch:{ //
+
+                    },
+                    directives:{ //
+
+                    },
+                    filters:{ //
+
+                    }
+                }
+            },
+
+            //钩子函数(生命周期)
+
+            
+            created:function(){
+                
+            },
+
+        });
+
+        
+    </script>
+</body>
+</html>
