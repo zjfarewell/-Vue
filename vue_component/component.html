@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+           <header-top></header-top>
+           <header-center></header-center>
+           <header-footer></header-footer>
+    </div>
+
+    <template id="footer"><div>
+        {{msg}}
+    </div></template>
+
+    <script>
+        var headerFooter = {
+            template:'#footer',
+            data(){
+                return{
+                    msg:'我是底部组件'
+                }
+            }
+        }
+
+        var headerCenter = {
+            template:'<div>我时中间的组件</div>',
+            watch:{},
+            computed:{}
+        }
+
+        new Vue({
+            el:'#app',
+            //template:'<div>大哥放电饭锅</div>'  //选项参数 里面的内容会替换#app里的内容
+
+            components:{
+                'headerTop':{
+                    template:'<div>我是头组件</div>',
+                    data(){
+                        return{}
+                    },
+                    methods:{
+
+                    } //...
+                },
+                'headerCenter':headerCenter,
+                'headerFooter':headerFooter
+            }
+        });
+    </script>
+</body>
+</html>
